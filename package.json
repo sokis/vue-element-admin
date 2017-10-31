@@ -10,7 +10,9 @@
     "build:prod": "cross-env NODE_ENV=production node build/build.js",
     "build:sit": "cross-env NODE_ENV=sit node build/build.js",
     "build:sit-preview": "cross-env NODE_ENV=sit npm_config_preview=true  npm_config_report=true node build/build.js",
-    "lint": "eslint --ext .js,.vue src"
+    "lint": "eslint --ext .js,.vue src",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "axios": "0.15.3",
@@ -33,7 +35,8 @@
     "vue-router": "2.5.3",
     "vuedraggable": "2.8.4",
     "vuex": "2.3.1",
-    "xlsx": "0.8.1"
+    "xlsx": "0.8.1",
+    "snyk": "^1.47.0"
   },
   "devDependencies": {
     "autoprefixer": "6.7.2",
@@ -92,5 +95,6 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "snyk": true
 }
